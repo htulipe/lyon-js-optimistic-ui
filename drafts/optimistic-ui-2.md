@@ -30,7 +30,7 @@ Ce que l'on veut:
 L'application est branchée à un state redux composé de 2 reducers:
 
 ```
-all = {
+const all = {
     "Movie:10568": {
         title: "Forrest Gump"
         releaseDate: "5/10/1994"
@@ -93,23 +93,23 @@ const ConnectedUserRating = connect(mapStateToProps)(UserRating);
 // <ConnectedWTSButton entityId="Movie:10568" />
 ```
 
-Les actions Redux:
-
-- REGISTER_ENTITIES
-- GET_SOCIAL_ACTIONS_FOR_ENTITIES (REQUEST/SUCCESS/FAILURE)
-- CREATE_OPINION (REQUEST/SUCCESS/FAILURE)
-- UPDATE_OPINION (REQUEST/SUCCESS/FAILURE)
-- DELETE_OPINION (REQUEST/SUCCESS/FAILURE)
-- CREATE_WTS (REQUEST/SUCCESS/FAILURE)
-- DELETE_WTS (REQUEST/SUCCESS/FAILURE)
 
 Que noter jusque là:
 
 - Toutes les entités sont listées dans all et ont une correspondance dans actionsPerEntity
-- Toutes les entités sont normalisées, accessible via id unique et de forme connue (formalisée en TypeScript)
 - Les composants sont découplés du state. UserRating va lire son opinion et son entité sans savoir d'où ces infos viennent ni quand elle évoluent.
 
-Comment fair de l'OUI simplement à partir de ça. Il faut mettre à jour le state non plus sur _SUCCESS mais sur _REQUEST. 
+
+Les actions Redux:
+
+- GET_SOCIAL_ACTIONS_FOR_ENTITIES (REQUEST/SUCCESS/FAILURE)
+- CREATE_OPINION (REQUEST/SUCCESS/FAILURE)
+- UPDATE_OPINION (REQUEST/SUCCESS/FAILURE)
+- DELETE_OPINION (REQUEST/SUCCESS/FAILURE)
+
+
+
+Comment faire de l'OUI simplement à partir de ça. Il faut mettre à jour le state non plus sur _SUCCESS mais sur _REQUEST. 
 
 # MAJ d'une opinion
 
@@ -126,11 +126,11 @@ disptach({
 });
 ```
 
-Modif dans "all": aucune, l'opinion existe déjà.
-Modif dans "actionsPerEntity": aller modifier la valeur de l'opinion:
+Modif dans "all":  aller modifier la valeur de l'opinion
+Modif dans "actionsPerEntity": aucune, la relation existe déjà
 
 ```
-// actionPerEntity
+// all
 swicth(type) {
     case UPDATE_OPINION_REQUEST: {
         // Il faut évidemment créer un nouveau state, pas modifier l'existant
@@ -195,11 +195,12 @@ Dans "all", supprimer l'entrée avec le faux id. En crééer une avec la donnée
 Dans "actionsPerEntity", MAJ la référence à l'opinion liée à "Movie:12345" pour y mettre le vrai id.
 
 A chaque moment (REQUEST et SUCCESS), le compo ConnectedUserRating reçoit directement la nouvelle opinion.
+
 L'id temporaire est une tambouille interne au state et n'apparait même pas dans le mapStateToProps:
 
 ```
 const mapStateToProps = (ownProps) => {
-    const entity = state.all[ownProps.entityId]; // Inchangé
+    const entity = state.all[ownProps.entityId];
     // sur REQUEST opinionId vaut un entier négatif aléatoire mais osef. Sur SUCCESS il vaut un vrai id mais, pareil, osef
     const opinionId = state.actionsPerEntity[ownProps.entityId].opinion;
     const opinion = state.all[opinionId]; // Car le lien est fait ici

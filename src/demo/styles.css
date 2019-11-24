@@ -1,0 +1,36 @@
+.demo {
+    padding: 1rem;
+    border: 1px solid #D3D3D3;
+    
+}
+
+.demo .list {
+    background: #FAFAFA;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    min-height: 190px;
+}
+
+.demo .title {
+    font-weight: bold;
+}
+
+.demo .movies-list li {
+    list-style-type: circle;
+}
+
+.demo .controls button {
+    margin-right: 1rem;
+    background-color: gold;
+    color: #333333
+}
+
+.movies-list-state {
+    padding: 3rem;
+    text-align: center;
+    min-height: 100px;
+}
+
+.demo button {
+    outline:none;
+}
