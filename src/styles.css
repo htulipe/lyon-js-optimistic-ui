@@ -14,3 +14,9 @@ button {
 .bctovF {
     background: #272f36;
 }
+
+footer {
+    position: absolute;
+    font-size: 0.625rem;
+    bottom: 50px;
+}
