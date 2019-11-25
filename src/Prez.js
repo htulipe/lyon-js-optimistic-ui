@@ -49,7 +49,7 @@ const Prez = () => {
       <Slide component={UpdateOpinion} />
       <Slide component={CreateOpinion} />
       <Slide component={CreateOpinionReducer} />
-      <Slide component={RecapIndependentUI} />
+      {/*<Slide component={RecapIndependentUI} />*/}
       <Slide component={DeleteOpinion} />
       <Slide component={WhatIfItGoesWrong} />
       <Slide component={UpdateFailure} />

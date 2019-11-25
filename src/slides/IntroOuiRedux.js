@@ -4,7 +4,7 @@ import { ContentSlide, Step } from 'react-presents';
 export const IntroOuiRedux = () => {
   return (
     <ContentSlide>
-      <h1>Avec Redux</h1>
+      <h1>Un peu de contexte</h1>
       <br />
       <Step index={1}>
         <iframe

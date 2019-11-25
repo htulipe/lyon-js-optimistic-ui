@@ -5,9 +5,7 @@ export const IntroOuiSpa = () => {
   return (
     <TitleSlide>
       <h1>Single Page App</h1>
-      <p>
-        Une UI connectée à un state qui évolue suite à des actions utilisateurs
-      </p>
+      <p>UI x state x actions</p>
     </TitleSlide>
   );
 };

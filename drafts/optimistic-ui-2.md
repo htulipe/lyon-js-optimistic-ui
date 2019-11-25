@@ -57,11 +57,11 @@ const all = {
 actionsPerEntity = {
     "Movie:10568": {
         opinion: "Opinion:13ZS34",
-        wanToSee: null,
+        wantToSee: null,
     },
     "Movie:22779": {
         opinion: null,
-        wanToSee: null,
+        wantToSee: null,
     },
     "Movie:9393": {
         opinion: null,
