@@ -8,7 +8,7 @@ export const IntroOuiRedux = () => {
       <br />
       <Step index={1}>
         <iframe
-          src="http://www.allocine.fr/film/fichefilm_gen_cfilm=258374.html"
+          src="http://www.allocine.fr/film/fichefilm_gen_cfilm=258374.html#no-ads"
           width="100%"
           height="500"
         ></iframe>

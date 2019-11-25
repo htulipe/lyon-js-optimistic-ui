@@ -30,8 +30,7 @@ const sample = `const all = {
     "WantToSee:24FD32": {
         relatedEntity: "Movie:9393"
     }
-}
-`;
+}`;
 
 export const IntroStateAll = ({ stepIndex }) => {
   return (

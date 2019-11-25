@@ -5,3 +5,12 @@
 .monospace {
     font-family: monospace;
 }
+
+button {
+    background: #fecc00;
+    color: black !important;
+}
+
+.bctovF {
+    background: #272f36;
+}
