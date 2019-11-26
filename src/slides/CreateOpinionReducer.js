@@ -1,6 +1,5 @@
 import React from 'react';
-import ContentSlide from 'react-presents/dist/commonjs/ContentSlide';
-import { Code, Step } from 'react-presents';
+import { Code, Step, ContentSlide } from 'react-presents';
 
 const dimLines = {
   0: [[1, 9]],

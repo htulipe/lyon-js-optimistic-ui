@@ -1,6 +1,5 @@
 import React from 'react';
-import ContentSlide from 'react-presents/dist/commonjs/ContentSlide';
-import { Step } from 'react-presents';
+import { Step, ContentSlide } from 'react-presents';
 
 export const ReduxActions = () => {
   return (
